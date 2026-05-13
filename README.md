@@ -61,6 +61,7 @@ To adhere to best practices and the assignment's constraints, a dedicated branch
       ```bash
       git push -u origin feature-update
       ```
+      
 ## Phase 4: Merging & Integration
 Once the core logic was completed and tested in the `feature-update` branch, it was integrated back into the stable `main` branch to consolidate the project.
 
