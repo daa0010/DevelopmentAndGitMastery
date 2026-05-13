@@ -1,0 +1,89 @@
+:root {
+    --bg-color: #121212;
+    --panel-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #aaaaaa;
+    --accent-blue: #00aaff;
+    --prompt-green: #2ecc71;
+    --error-red: #e74c3c;
+    --border-color: #333333;
+    --shadow-subtle: 0 4px 15px rgba(0,0,0,0.3);
+
+    --font-ui: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-ui);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    background-color: var(--panel-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-subtle);
+    overflow: hidden;
+}
+
+.reference-card {
+    flex: 1;
+    padding: 40px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.reference-card h1 { font-size: 24px; font-weight: 600; color: #fff; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.reference-card h1 i { color: var(--accent-blue); }
+.reference-card .subtitle { color: var(--text-muted); margin-bottom: 30px; font-size: 14px; }
+
+.command-list { list-style: none; }
+.command-item { padding: 12px 15px; border-radius: 8px; margin-bottom: 8px; transition: background 0.2s; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.command-item:hover { background-color: rgba(255,255,255,0.03); }
+.command-item i { width: 20px; text-align: center; color: var(--accent-blue); font-size: 16px; }
+.command-item .cmd-name { font-family: var(--font-mono); font-weight: 500; color: #fff; flex-grow: 1; }
+
+.simulator-section { flex: 2; padding: 20px; display: flex; flex-direction: column; }
+.terminal-window { background-color: #000; border: 1px solid var(--border-color); border-radius: 8px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: inset 0 0 10px rgba(255,255,255,0.05); }
+.terminal-header { background-color: #1a1a1a; padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+.window-controls { display: flex; gap: 8px; }
+.control { width: 12px; height: 12px; border-radius: 50%; }
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+.terminal-title { color: var(--text-muted); font-size: 12px; font-family: var(--font-ui); font-weight: 600; }
+.terminal-actions { display: flex; gap: 10px; }
+.action-btn { background: transparent; border: 1px solid #444; color: var(--text-muted); padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer; transition: all 0.2s; }
+.action-btn:hover { background: #333; color: #fff; }
+
+#output { flex-grow: 1; padding: 20px; font-family: var(--font-mono); font-size: 14px; line-height: 1.7; overflow-y: auto; color: #d0d0d0; }
+.system-msg { color: var(--text-muted); font-style: italic; }
+.welcome-msg { color: #fff; font-weight: 500; margin-bottom: 10px; }
+.prompt-line { color: var(--prompt-green); }
+.echo-line { color: #fff; margin-bottom: 8px; }
+.definition-line { color: var(--accent-blue); margin-left: 20px; margin-bottom: 15px; display: block;}
+.error-msg { color: var(--error-red); font-weight: 500; }
+
+.input-line { padding: 15px 20px; border-top: 1px solid var(--border-color); background-color: #080808; display: flex; align-items: center; }
+.prompt { color: var(--prompt-green); margin-right: 10px; font-family: var(--font-mono); }
+#commandInput { background: transparent; border: none; color: #fff; font-family: var(--font-mono); font-size: 14px; outline: none; flex-grow: 1; }
+#commandInput::placeholder { color: #555; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--panel-bg); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
