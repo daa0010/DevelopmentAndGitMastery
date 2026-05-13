@@ -41,7 +41,7 @@ DevelopmentAndGitMastery/
 
 The interactive version of this project is publicly available. You can access the simulator through the following link:
 
-**[Live Demo Link](https://daa0010.github.io/DevelopmentAndGitMastery/)**
+**[Web Link](https://daa0010.github.io/DevelopmentAndGitMastery/)**
 
 ## Additional Documentation
 
