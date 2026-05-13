@@ -17,16 +17,20 @@ To start the project, a local repository was initialized in the IDE's integrated
       git remote add origin [https://github.com/daa0010/DevelopmentAndGitMastery.git](https://github.com/daa0010/DevelopmentAndGitMastery.git)
       ```
       
-3. **Initial Commit:**
-    - Staged foundational files (`.gitignore`, `pom.xml`, `README.md`):
-      ```bash
-      git add .
-      ```
-    - Committed the initial project state:
-      ```bash
-      git commit -m "Initial commit"
-      ```
-
+3. **Checking Status & Initial Commit:**
+   - Verified the untracked files before staging them:
+     ```bash
+     git status
+     ```
+   - Staged foundational files (`.gitignore`, `pom.xml`, `README.md`):
+     ```bash
+     git add .
+     ```
+   - Committed the initial project state:
+     ```bash
+     git commit -m "Initial commit"
+     ```
+     
 4. **Synchronization:**
     - Pushed the local `main` branch to the remote server:
       ```bash
