@@ -12,6 +12,10 @@ const dictionary = {
         def: "📖 git init: Initializes a new, empty local repository.",
         ex: "📝 Example: git init"
     },
+    "status": {
+        def: "📖 git status: Shows the state of the working directory and the staging area.",
+        ex: "📝 Example: git status"
+    },
     "add": {
         def: "📖 git add: Adds file changes to the staging area.",
         ex: "📝 Example: git add .  (Adds all files) OR  git add index.html (Adds specific file)"
@@ -142,6 +146,11 @@ function updateVisualizer(cmd) {
             local.classList.add('active', 'highlight');
             printMessage("SYSTEM: Visualizer showing initialized repository in Local Repo.", "system-msg");
             break;
+        case 'status':
+            wd.classList.add('highlight');
+            staging.classList.add('highlight');
+            printMessage("SYSTEM: Visualizer showing inspection of Working Dir and Staging Area.", "system-msg");
+            break;
         case 'add':
             wd.classList.add('active');
             staging.classList.add('active', 'highlight');
@@ -191,7 +200,7 @@ function processCommand(fullCmd) {
         updateVisualizer(baseCmd);
     } else {
         printMessage(`❌ Command 'git ${baseCmd}' not found in dictionary.`, 'error-msg');
-        printMessage("Try: init, add, commit, branch, switch, merge, push, or pull.", 'system-msg');
+        printMessage("Try: init, status, add, commit, branch, switch, merge, push, or pull.", 'system-msg');
         resetVisualizer();
     }
 }
