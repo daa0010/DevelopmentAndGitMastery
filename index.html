@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git Mastery • Educational Dictionary & Simulator</title>
+  <title>Git Mastery • Educational Dictionary & Simulator PRO</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,22 +11,34 @@
 <body>
 <div class="main-container">
   <aside class="reference-card">
-    <h1><i class="fa-solid fa-graduation-cap"></i> Git Mastery</h1>
+    <h1><i class="fa-solid fa-robot gitbot-mascot"></i> GitBot Mastery</h1>
     <p class="subtitle">An educational project for DAM Students, developed with AI-Pair Programming.</p>
 
-    <ul class="command-list">
-      <li class="command-item"><i class="fas fa-folder-plus"></i> <span class="cmd-name">git init</span></li>
-      <li class="command-item"><i class="fas fa-file-signature"></i> <span class="cmd-name">git add</span></li>
-      <li class="command-item"><i class="fas fa-box-archive"></i> <span class="cmd-name">git commit</span></li>
-      <li class="command-item"><i class="fas fa-code-branch"></i> <span class="cmd-name">git branch</span></li>
-      <li class="command-item"><i class="fas fa-arrows-alt-h"></i> <span class="cmd-name">git switch</span></li>
-      <li class="command-item"><i class="fas fa-object-group"></i> <span class="cmd-name">git merge</span></li>
-      <li class="command-item"><i class="fas fa-cloud-upload-alt"></i> <span class="cmd-name">git push</span></li>
-      <li class="command-item"><i class="fas fa-cloud-download-alt"></i> <span class="cmd-name">git pull</span></li>
+    <p class="section-title">Essential Commands (Click to run)</p>
+    <ul class="command-list" id="clickableCommandList">
+      <li class="command-item" data-cmd="init"><i class="fas fa-folder-plus"></i> <span class="cmd-name">git init</span></li>
+      <li class="command-item" data-cmd="add ."><i class="fas fa-file-signature"></i> <span class="cmd-name">git add .</span></li>
+      <li class="command-item" data-cmd='commit -m "initial commit"'><i class="fas fa-box-archive"></i> <span class="cmd-name">git commit -m "..."</span></li>
+      <li class="command-item" data-cmd="branch feature-x"><i class="fas fa-code-branch"></i> <span class="cmd-name">git branch &lt;name&gt;</span></li>
+      <li class="command-item" data-cmd="switch main"><i class="fas fa-arrows-alt-h"></i> <span class="cmd-name">git switch &lt;name&gt;</span></li>
+      <li class="command-item" data-cmd="merge feature-x"><i class="fas fa-object-group"></i> <span class="cmd-name">git merge &lt;name&gt;</span></li>
+      <li class="command-item" data-cmd="push origin main"><i class="fas fa-cloud-upload-alt"></i> <span class="cmd-name">git push</span></li>
+      <li class="command-item" data-cmd="pull origin main"><i class="fas fa-cloud-download-alt"></i> <span class="cmd-name">git pull</span></li>
     </ul>
   </aside>
 
   <section class="simulator-section">
+
+    <div class="git-flow-visualizer">
+      <div class="flow-node active" id="node-wd" title="Working Directory">Working Dir</div>
+      <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="flow-node" id="node-staging" title="Staging Area">Staging Area</div>
+      <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="flow-node" id="node-local" title="Local Repository">Local Repo</div>
+      <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="flow-node" id="node-remote" title="Remote Repository (GitHub)">Remote Repo</div>
+    </div>
+
     <div class="terminal-window">
       <div class="terminal-header">
         <div class="window-controls">
@@ -41,9 +53,8 @@
       </div>
 
       <div id="output">
-        <div class="welcome-msg">🤖 Welcome to the Educational Git Dictionary & Simulator 🤖</div>
-        <div class="system-msg">Type a basic command (e.g., commit, branch) to see its definition.</div>
-        <div class="system-msg">Use <i class="fas fa-arrow-up"></i> / <i class="fas fa-arrow-down"></i> for command history.</div>
+        <div class="welcome-msg">🤖 Welcome to the Educational Git Dictionary & Simulator PRO 🤖</div>
+        <div class="system-msg">Type a basic command or click from the left panel.</div>
       </div>
 
       <div class="input-line">
@@ -53,7 +64,11 @@
     </div>
   </section>
 </div>
-
+<div id="trivia-bot-container">
+  <div class="trivia-speech-bubble" id="trivia-speech">GitBot initialized! Click me for lore.</div>
+  <i class="fa-solid fa-robot" id="trivia-bot-icon"></i>
+</div>
 <script src="script.js"></script>
+
 </body>
 </html>
